@@ -5,17 +5,7 @@ require 'capistrano/setup'
 require 'capistrano/deploy'
 
 # require 'capistrano/bundler'
-# require 'capistrano/rails'
-
-require 'capistrano/bundler'
-require 'capistrano/rails/assets'
-require 'capistrano/rails/migrations'
-require 'capistrano/passenger'
-
-require 'capistrano/rvm'
-set :rvm_type, :user
-set :rvm_ruby_version, '2.2.4p230'
-
+require 'capistrano/rails'
 
 # Includes tasks from other gems included in your Gemfile
 #
@@ -27,12 +17,14 @@ set :rvm_ruby_version, '2.2.4p230'
 #   https://github.com/capistrano/bundler
 #   https://github.com/capistrano/rails
 #
-# require 'capistrano/rvm'
+require 'capistrano/rvm'
+set :rvm_type, :user
+set :rvm_ruby_version, '2.2.4p230'
+
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
-# require 'capistrano/bundler'
-# require 'capistrano/rails/assets'
-# require 'capistrano/rails/migrations'
+require 'capistrano/bundler'
+require 'capistrano/passenger'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
