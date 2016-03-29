@@ -1,6 +1,8 @@
 # config valid only for Capistrano 3.1
 lock '3.4.0'
 
+set :passenger_restart_with_touch, true
+
 set :application, 'rails-deploy'
 set :repo_url, 'git@github.com:pellenberger/rails-deploy.git'
 
