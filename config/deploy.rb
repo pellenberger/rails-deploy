@@ -3,7 +3,7 @@ lock '3.4.0'
 
 set :passenger_restart_with_touch, true
 
-set :application, 'railsdeploy'
+set :application, 'rails-deploy'
 set :repo_url, 'git@github.com:pellenberger/rails-deploy.git'
 
 # Default branch is :master
@@ -11,7 +11,7 @@ set :repo_url, 'git@github.com:pellenberger/rails-deploy.git'
 set :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/deploy/rails-deploy'
+set :deploy_to, '/home/deploy/railsdeploy'
 
 # Default value for :scm is :git
 # set :scm, :git
