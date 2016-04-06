@@ -3,11 +3,12 @@ lock '3.4.0'
 
 set :passenger_restart_with_touch, true
 
-set :application, 'rails-deploy'
+set :application, 'railsdeploy'
 set :repo_url, 'git@github.com:pellenberger/rails-deploy.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+set :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/deploy/rails-deploy'
@@ -30,7 +31,7 @@ set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
